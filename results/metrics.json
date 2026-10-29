@@ -1,0 +1,78 @@
+{
+  "data": {
+    "runs": 1567,
+    "sensors": 590,
+    "fail_runs": 104,
+    "fail_rate": 0.0664,
+    "first_run": "2008-07-19 17:25:00",
+    "last_run": "2008-10-17 11:37:00"
+  },
+  "split": {
+    "train_runs": 1097,
+    "test_runs": 470,
+    "train_fail_rate": 0.0711,
+    "test_fail_rate": 0.0553
+  },
+  "quality": {
+    "share_of_all_readings_missing": 0.0492,
+    "sensors_with_no_missing": 148,
+    "dropped_over_40pct_missing": 28,
+    "dropped_constant": 122,
+    "sensors_kept": 440
+  },
+  "outliers": {
+    "sensors_with_a_fence": 432,
+    "runs_by_outlier_sensor_count": {
+      "0": 170,
+      "1-5": 779,
+      "6-20": 576,
+      "21+": 42
+    },
+    "fail_rate_by_outlier_sensor_count": {
+      "0": 0.0647,
+      "1-5": 0.0565,
+      "6-20": 0.0712,
+      "21+": 0.1905
+    }
+  },
+  "drift": {
+    "sensors_compared": 440,
+    "sensors_shifted_over_half_a_std": 71,
+    "largest_shifts_in_train_std_devs": {
+      "f116": 1.08,
+      "f417": 0.93,
+      "f543": 0.93,
+      "f571": 0.91,
+      "f169": 0.9
+    }
+  },
+  "models": {
+    "test_fail_rate_is_the_AUC_PR_baseline": 0.0553,
+    "logistic_regression": {
+      "auc_roc": 0.591,
+      "auc_roc_checked_by_hand": 0.591,
+      "auc_pr": 0.07,
+      "at_0.5_threshold": {
+        "caught_fails": 5,
+        "missed_fails": 21,
+        "false_alarms": 46,
+        "correct_passes": 398,
+        "precision": 0.098,
+        "recall": 0.192
+      }
+    },
+    "random_forest": {
+      "auc_roc": 0.601,
+      "auc_roc_checked_by_hand": 0.601,
+      "auc_pr": 0.067,
+      "at_0.5_threshold": {
+        "caught_fails": 0,
+        "missed_fails": 26,
+        "false_alarms": 0,
+        "correct_passes": 444,
+        "precision": null,
+        "recall": 0.0
+      }
+    }
+  }
+}
